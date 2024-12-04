@@ -1,0 +1,61 @@
+body {
+    background-color: #9dbad7; /* Cor de fundo suave para o corpo */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Garante que o corpo ocupe 100% da altura da tela */
+  }
+
+.login-container {
+    background-color: #ffffff;
+    padding: 30px; /* Espaçamento interno maior */
+    border-radius: 15px; /* Bordas mais arredondadas */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra suave e única */
+    width: 320px; /* Largura maior para melhorar visualmente */
+    text-align: center;
+    position: relative;
+}
+
+form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Maior espaçamento entre os elementos */
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px; /* Tamanho de fonte mais consistente */
+}
+
+input {
+    padding: 12px; /* Ajuste no espaçamento interno */
+    border: 1px solid #ddd; /* Linha mais clara */
+    border-radius: 8px; /* Bordas mais arredondadas */
+    font-size: 14px;
+    outline: none; /* Remove o contorno padrão ao focar */
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #007bff; /* Destaque ao focar */
+}
+
+button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
