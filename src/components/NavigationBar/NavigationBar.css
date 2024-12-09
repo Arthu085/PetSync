@@ -1,0 +1,38 @@
+header {
+    background-color: rgb(70, 144, 184);
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.link-dashboard {
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.link-dashboard:hover {
+    text-decoration: underline;
+}
+
+button {
+    all: unset; /* Remove todos os estilos padrão */
+  }
+  
+button:hover {
+    all: unset;
+}
+
+.hamburguer-button img {
+    width: 70px; /* Ajusta o tamanho da imagem dentro do botão */
+    height: 35px; /* Ajusta proporcionalmente */
+}
+
+.hamburguer-button:hover {
+    cursor: pointer;
+}

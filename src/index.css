@@ -1,5 +1,5 @@
 body.login-page {
-    background-color: #9dbad7; /* Cor de fundo suave para o corpo */
+    background-color: #9dbad7;
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
@@ -9,5 +9,7 @@ body.login-page {
 }
 
 body.dashboard-page {
-    background-color: #ffffff; /* Cor específica para o dashboard */
+    background-color: #ffffff;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
