@@ -1,13 +1,3 @@
-body {
-    background-color: #9dbad7; /* Cor de fundo suave para o corpo */
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Garante que o corpo ocupe 100% da altura da tela */
-  }
-
 .login-container {
     background-color: #ffffff;
     padding: 30px; /* Espaçamento interno maior */

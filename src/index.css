@@ -1,0 +1,13 @@
+body.login-page {
+    background-color: #9dbad7; /* Cor de fundo suave para o corpo */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Garante que o corpo ocupe 100% da altura da tela */
+}
+
+body.dashboard-page {
+    background-color: #ffffff; /* Cor específica para o dashboard */
+}
