@@ -47,13 +47,14 @@ const Login = () => {
           required
           className='input-login'
         />
-        <label htmlFor="password">Digite sua senha:</label>
+        <label className='label-login' htmlFor="password">Digite sua senha:</label>
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="********"
           required
+          className='input-login'
         />
         <button id='button-login' type="submit">Entrar</button>
         {message && <p>{message}</p>} {/* Exibe a mensagem de erro ou sucesso */}

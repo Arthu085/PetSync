@@ -4,8 +4,11 @@ import './CrudCliente.css'
 
 const CrudCliente = () => {
   const [formVisible, setFormVisible] = useState(false);
+  const [nome_cliente, setNomeCliente] = useState('');
+  const [email, setEmail] = useState('');
   const [telefone, setTelefone] = useState('');
   const [cpf, setCpf] = useState('');
+  const [endereco, setEndereco] = useState('');
 
   const toggleForm = () => {
     setFormVisible(!formVisible);
@@ -32,6 +35,39 @@ const CrudCliente = () => {
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    const clienteData = {
+      nome_cliente,
+      email,
+      telefone,
+      endereco,
+      cpf,
+    };
+  
+    try {
+      const response = await fetch('http://localhost:5000/api/clientes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(clienteData),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        alert('Cliente adicionado com sucesso!');
+      } else {
+        alert(`Erro: ${data.message}`);
+      }
+    } catch (error) {
+      console.error('Erro ao adicionar cliente:', error);
+      alert('Erro ao adicionar cliente');
+    }
+  };
+
   return (
     <div>
         <NavigationBar/>
@@ -46,21 +82,42 @@ const CrudCliente = () => {
               <div className="form-overlay" onClick={toggleForm}></div>
               <div className="form-content">
                 <h2>Adicionar Novo Cliente</h2>
-                <form>
-                  <input type="text" placeholder="Nome do Cliente" required />
-                  <input type="email" placeholder="Email" required />
-                  <input type="text"
-                          placeholder="Telefone"
-                          value={telefone}
-                          onChange={handleTelefoneChange}
-                          maxLength="15"  
-                          required/>
-                  <textarea placeholder="Endereço" required></textarea>
-                  <input type="text"
-                          placeholder="CPF"
-                          value={cpf}
-                          onChange={handleCpfChange}
-                          maxLength="14"/>
+                <form onSubmit={handleSubmit}>
+                  <input
+                    type="text"
+                    placeholder="Nome do Cliente"
+                    value={nome_cliente}
+                    onChange={(e) => setNomeCliente(e.target.value)}
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                  <input
+                    type="text"
+                    placeholder="Telefone"
+                    value={telefone}
+                    onChange={handleTelefoneChange}
+                    maxLength="15"
+                    required
+                  />
+                  <textarea
+                    placeholder="Endereço"
+                    value={endereco}
+                    onChange={(e) => setEndereco(e.target.value)}
+                    required
+                  ></textarea>
+                  <input
+                    type="text"
+                    placeholder="CPF"
+                    value={cpf}
+                    onChange={handleCpfChange}
+                    maxLength="14"
+                  />
                   <button type="submit">Salvar</button>
                 </form>
               </div>
@@ -68,7 +125,7 @@ const CrudCliente = () => {
           )}
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default CrudCliente
+export default CrudCliente;
