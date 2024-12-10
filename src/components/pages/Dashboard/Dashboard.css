@@ -1,0 +1,21 @@
+h1 {
+    font-family: 'Arial', sans-serif; /* Fonte legível e destacada */
+    font-size: 3rem; /* Tamanho grande para destaque */
+    font-weight: bold; /* Negrito para dar destaque */
+    color: #ffffff; /* Cor branca para contraste */
+    text-align: center; /* Centraliza horizontalmente */
+    line-height: 1.5; /* Espaçamento entre as linhas */
+    background-color: rgb(70, 144, 184); /* Mesma cor da navbar */
+    padding: 20px; /* Espaçamento interno para tornar o fundo mais destacado */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 30%;
+    margin: 0;
+    margin-left: 30px;
+}
+
+main {
+    padding-top: 50px;
+    background-color: rgb(191, 236, 246);
+    height: 76.5vh;
+}
