@@ -1,0 +1,129 @@
+.h1-cliente {
+    font-family: 'Arial', sans-serif; 
+    font-size: 1.3rem;
+    color: black; 
+    line-height: 1.5;
+    padding: 20px;
+    font-weight: 300;
+}
+
+.container-cliente {
+    background-color: white;
+    margin: 50px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.h1-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#adicionar-cliente {
+    margin: 20px;
+    padding: 8px 25px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+#adicionar-cliente:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#adicionar-cliente:active {
+    background-color: #388e3c;
+    transform: scale(0.98);
+}
+
+.form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+    z-index: 1000;
+    animation: slideDown 0.2s ease-out;
+  }
+  
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .form-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+    z-index: 999;
+    cursor: pointer; /* Para clicar e fechar */
+  }
+  
+  .form-content {
+    background-color: white;
+    padding: 20px;
+    max-width: 500px; /* Tamanho máximo do formulário */
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1001;
+    overflow: hidden; /* Para garantir que nada ultrapasse o border-radius */
+  }
+  
+  .form-content h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .form-content input,
+  .form-content textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .form-content button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    width: 100%; /* Para ocupar a largura do formulário */
+  }
+  
+  .form-content button:hover {
+    background-color: #45a049;
+  }
+  
+  .form-content button:active {
+    background-color: #388e3c;
+  }
+  

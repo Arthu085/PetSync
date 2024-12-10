@@ -36,15 +36,16 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <form onSubmit={handleLogin}>
+      <form className='form-login' onSubmit={handleLogin}>
         <h2>Bem-vindo</h2>
-        <label htmlFor="email">Digite seu E-mail:</label>
+        <label className='label-login' htmlFor="email">Digite seu E-mail:</label>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="seuemail@exemplo.com"
           required
+          className='input-login'
         />
         <label htmlFor="password">Digite sua senha:</label>
         <input
@@ -54,7 +55,7 @@ const Login = () => {
           placeholder="********"
           required
         />
-        <button type="submit">Entrar</button>
+        <button id='button-login' type="submit">Entrar</button>
         {message && <p>{message}</p>} {/* Exibe a mensagem de erro ou sucesso */}
       </form>
     </div>

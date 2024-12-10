@@ -1,4 +1,4 @@
-header {
+.navbar {
     background-color: rgb(70, 144, 184);
     padding: 30px;
     display: flex;
@@ -20,7 +20,7 @@ header {
     text-decoration: underline;
 }
 
-button {
+.hamburguer-button {
     all: unset; /* Remove todos os estilos padrão */
     display: flex; /* Para alinhar o conteúdo do botão */
     justify-content: center; /* Centraliza horizontalmente */
@@ -30,13 +30,13 @@ button {
     transition: background-color 0.3s, transform 0.2s; /* Suaviza animações */
   }
   
-  button:hover {
+  .hamburguer-button:hover {
     background-color: #28609f3e; /* Cor mais escura ao passar o mouse */
     transform: scale(1.05); /* Leve ampliação */
     cursor: pointer; /* Mostra que o elemento é clicável */
   }
   
-  button:active {
+  .hamburguer-button:active {
     background-color: #d1d5db; /* Cor de fundo ao clicar */
     transform: scale(0.95); /* Simula um clique */
   }

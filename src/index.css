@@ -9,8 +9,13 @@ body.login-page {
 }
 
 body.dashboard-page {
-    background-color: #ffffff;
+    background-color: #9dbad7;
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
+body.cliente-page {
+    margin: 0;
+    background-color: #9dbad7;
+    font-family: Arial, sans-serif;
+}
