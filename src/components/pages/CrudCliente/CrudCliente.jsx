@@ -103,18 +103,41 @@ const CrudCliente = () => {
         </div>
 
         {/* Exibir a lista de clientes */}
-        <div className="clientes-list">
-          {clientes.length > 0 ? (
-            <ul>
-              {clientes.map((cliente) => (
-                <li key={cliente.id_cliente}>
-                  {cliente.nome_cliente} - {cliente.email} - {cliente.telefone} - {cliente.endereco} - {cliente.cpf}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>Nenhum cliente encontrado.</p>
-          )}
+        <div className="espacamento">
+          <div className="clientes-list">
+            {clientes.length > 0 ? (
+              <div>
+                {/* Cabeçalho */}
+                <div className="cliente-cabecario">
+                  <span>Nome do Cliente</span>
+                  <span>Email</span>
+                  <span>Telefone</span>
+                  <span>Endereço</span>
+                  <span>CPF</span>
+                </div>
+                {/* Dados dos clientes */}
+                <ul className="ul-cliente">
+                  {clientes.map((cliente) => (
+                    <li className="li-cliente" key={cliente.id_cliente}>
+                      <div className="dados-cliente">
+                        <span>{cliente.nome_cliente}</span>
+                        <span>{cliente.email}</span>
+                        <span>{cliente.telefone}</span>
+                        <span>{cliente.endereco}</span>
+                        <span>{cliente.cpf}</span>
+                      </div>
+                      <div className="action-buttons">
+                        <button id="edit-cliente">Editar</button>
+                        <button id="delete-cliente">Excluir</button>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <p>Nenhum cliente encontrado.</p>
+            )}
+          </div>
         </div>
 
         {/* Formulário de adição de cliente */}
@@ -158,6 +181,7 @@ const CrudCliente = () => {
                   value={cpf}
                   onChange={(e) => setCpf(formatCpf(e.target.value))}
                   maxLength="14"
+                  required
                 />
                 <button type="submit">Salvar</button>
               </form>
