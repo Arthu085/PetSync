@@ -10,6 +10,8 @@ const CrudCliente = () => {
   const [telefone, setTelefone] = useState('');
   const [cpf, setCpf] = useState('');
   const [endereco, setEndereco] = useState('');
+  const [formVisibleDelete, setFormVisibleDelete] = useState(false);
+  const [clienteExcluirId, setClienteExcluirId] = useState(null);
 
   // Função para formatar o telefone
   const formatTelefone = (value) => {
@@ -59,6 +61,11 @@ const CrudCliente = () => {
     setFormVisible(!formVisible);
   };
 
+  const toggleFormDelete = () => {
+    setFormVisibleDelete(!formVisibleDelete)
+  }
+
+  // Função para adicionar cliente
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -91,6 +98,37 @@ const CrudCliente = () => {
       console.error('Erro ao adicionar cliente:', error);
       alert('Erro ao adicionar cliente');
     }
+  };
+
+  const handleDeleteClick = (id_cliente) => {
+    setClienteExcluirId(id_cliente);
+    setFormVisibleDelete(true); // Exibir o formulário de confirmação de exclusão
+  };
+  
+  const handleConfirmDelete = async () => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/clientes/${clienteExcluirId}`, {
+        method: 'DELETE',
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        alert('Cliente deletado com sucesso!');
+        fetchClientes(); // Atualizar a lista de clientes após exclusão
+      } else {
+        alert(`Erro: ${data.message}`);
+      }
+    } catch (error) {
+      console.error('Erro ao deletar cliente:', error);
+      alert('Erro ao deletar cliente');
+    }
+  
+    setFormVisibleDelete(false); // Fechar o formulário após confirmação
+  };
+  
+  const handleCancelDelete = () => {
+    setFormVisibleDelete(false); // Fechar o formulário sem excluir
   };
 
   return (
@@ -128,14 +166,14 @@ const CrudCliente = () => {
                       </div>
                       <div className="action-buttons">
                         <button id="edit-cliente">Editar</button>
-                        <button id="delete-cliente">Excluir</button>
+                        <button id="delete-cliente" onClick={() => handleDeleteClick(cliente.id_cliente)}>Excluir</button>
                       </div>
                     </li>
                   ))}
                 </ul>
               </div>
             ) : (
-              <p>Nenhum cliente encontrado.</p>
+              <p className="no-cliente">Nenhum cliente encontrado.</p>
             )}
           </div>
         </div>
@@ -184,6 +222,21 @@ const CrudCliente = () => {
                   required
                 />
                 <button type="submit">Salvar</button>
+              </form>
+            </div>
+          </div>
+        )}
+        {/* Formulário de exlcusão de cliente */}
+        {formVisibleDelete &&(
+          <div className="form-container">
+            <div className="form-overlay" onClick={toggleFormDelete}></div>
+            <div className="form-content-delete">
+              <form>
+                <h2>Deseja deletar o cliente?</h2>
+                <div className="answer-buttons">
+                  <button type="button" onClick={handleConfirmDelete} id="delete-cliente">SIM</button>
+                  <button type="button" onClick={handleCancelDelete}>NÃO</button>
+                </div>
               </form>
             </div>
           </div>
