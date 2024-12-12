@@ -12,6 +12,7 @@
 	margin: 50px;
 	border-radius: 6px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding-bottom: 10px;
 }
 
 .h1-button {
@@ -221,11 +222,15 @@
 	justify-content: center;
 }
 
-.form-content-delete form h2 {
+.form-content-delete h2 {
 	text-align: center;
 }
 
-.form-content-delete form button {
+.form-content-delete p {
+	text-align: center;
+}
+
+.form-content-delete button {
 	width: 200px;
 	max-width: 300px; /* Limita a largura dos botões */
 	margin: 10px 0; /* Espaçamento entre os botões */
@@ -238,7 +243,7 @@
 	text-align: center;
 }
 
-.form-content-delete form button:hover {
+.form-content-delete button:hover {
 	background-color: #0056b3;
 }
 
@@ -246,8 +251,52 @@
 	display: flex;
 	flex-direction: row;
 	gap: 15px;
+	align-items: center;
+	justify-content: center;
 }
 
 .no-cliente {
 	padding-left: 20px;
+}
+
+.form-content-edit {
+	background-color: white;
+	padding: 20px;
+	max-width: 500px; /* Tamanho máximo do formulário */
+	width: 100%;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	position: relative;
+	z-index: 1001;
+	overflow: hidden;
+}
+
+.form-content-edit h2 {
+	text-align: center;
+}
+
+.form-content-edit form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.form-content-edit form button {
+	width: 200px;
+	padding: 10px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.form-content-edit button:hover {
+	background-color: #0056b3;
+}
+
+.button-save-edit {
+	display: flex;
+	justify-content: center;
 }
