@@ -21,3 +21,9 @@ body.cliente-page {
 	background-color: #9dbad7;
 	font-family: "DM Sans", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+body.animal-page {
+	margin: 0;
+	background-color: #9dbad7;
+	font-family: "DM Sans", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}

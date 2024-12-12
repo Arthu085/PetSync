@@ -1,0 +1,43 @@
+.container-animal {
+	background-color: white;
+	margin: 50px;
+	border-radius: 6px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding-bottom: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.container-animal h1 {
+	margin: 20px;
+	font-size: 1.3rem;
+	color: black;
+	line-height: 1.5;
+	font-weight: 300;
+}
+
+#adicionar-animal {
+	margin: 20px;
+	background-color: #4caf50;
+	color: white;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 8px;
+	border: none;
+	transition: all 0.3s ease;
+	display: inline-block;
+	padding: 20px 25px;
+}
+
+#adicionar-animal:hover {
+	background-color: #45a049;
+	transform: scale(1.05);
+	cursor: pointer;
+}
+
+#adicionar-animal:active {
+	background-color: #388e3c;
+	transform: scale(0.98);
+}
