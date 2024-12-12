@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import './SideBar.css';
 
 const SideBar = ({ isOpen, toggleSidebar }) => {
@@ -10,19 +9,19 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
         <nav>
           <ul>
             <li>
-              <Link to='/cliente' className='link-sidebar' onClick={toggleSidebar}>
-                Cliente
-              </Link>
+              <a href="#section1" id="link-cliente" onClick={toggleSidebar}>
+                Adicionar Cliente
+              </a>
             </li>
             <li>
-              <Link to='#' className='link-sidebar' onClick={toggleSidebar}>
-                Animal
-              </Link>
+              <a href="#section2" id="link-animal" onClick={toggleSidebar}>
+                Adicionar Animal
+              </a>
             </li>
             <li>
-              <Link to='#' className='link-sidebar' onClick={toggleSidebar}>
-                Usuário
-              </Link>
+              <a href="#section3" id="link-usuario" onClick={toggleSidebar}>
+                Adicionar Usuário
+              </a>
             </li>
           </ul>
         </nav>
