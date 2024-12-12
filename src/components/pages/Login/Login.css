@@ -8,20 +8,20 @@
     position: relative;
 }
 
-form {
+.form-login {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 20px; /* Maior espaçamento entre os elementos */
 }
 
-label {
+.label-login {
     font-weight: bold;
     color: #333;
     font-size: 16px; /* Tamanho de fonte mais consistente */
 }
 
-input {
+.input-login {
     padding: 12px; /* Ajuste no espaçamento interno */
     border: 1px solid #ddd; /* Linha mais clara */
     border-radius: 8px; /* Bordas mais arredondadas */
@@ -30,11 +30,11 @@ input {
     transition: border-color 0.3s;
 }
 
-input:focus {
+.input-login:focus {
     border-color: #007bff; /* Destaque ao focar */
 }
 
-button {
+#button-login {
     padding: 12px;
     background-color: #007bff;
     color: white;
@@ -46,6 +46,6 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+#button-login:hover {
     background-color: #0056b3;
 }

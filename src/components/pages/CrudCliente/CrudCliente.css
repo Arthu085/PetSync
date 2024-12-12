@@ -1,0 +1,302 @@
+.h1-cliente {
+	font-family: "Arial", sans-serif;
+	font-size: 1.3rem;
+	color: black;
+	line-height: 1.5;
+	padding: 20px;
+	font-weight: 300;
+}
+
+.container-cliente {
+	background-color: white;
+	margin: 50px;
+	border-radius: 6px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding-bottom: 10px;
+}
+
+.h1-button {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#adicionar-cliente {
+	margin: 20px;
+	padding: 8px 25px;
+	background-color: #4caf50;
+	color: white;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 8px;
+	border: none;
+	transition: all 0.3s ease;
+	display: inline-block;
+}
+
+#adicionar-cliente:hover {
+	background-color: #45a049;
+	transform: scale(1.05);
+	cursor: pointer;
+}
+
+#adicionar-cliente:active {
+	background-color: #388e3c;
+	transform: scale(0.98);
+}
+
+.form-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+	z-index: 1000;
+	animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.form-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+	z-index: 999;
+	cursor: pointer; /* Para clicar e fechar */
+}
+
+.form-content {
+	background-color: white;
+	padding: 20px;
+	max-width: 500px; /* Tamanho máximo do formulário */
+	width: 100%;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	position: relative;
+	z-index: 1001;
+	overflow: hidden; /* Para garantir que nada ultrapasse o border-radius */
+}
+
+.form-content h2 {
+	margin-bottom: 20px;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.form-content input,
+.form-content textarea {
+	width: 100%;
+	padding: 12px;
+	margin: 10px 0;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+	font-size: 1rem;
+	box-sizing: border-box;
+}
+
+.form-content button {
+	padding: 10px 20px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	font-size: 1rem;
+	width: 100%; /* Para ocupar a largura do formulário */
+}
+
+.form-content button:hover {
+	background-color: #45a049;
+}
+
+.form-content button:active {
+	background-color: #388e3c;
+}
+
+.espacamento {
+	padding-bottom: 20px;
+}
+
+.clientes-list {
+	margin: 20px;
+	border: 1px solid rgba(0, 0, 0, 0.386);
+	border-radius: 5px;
+}
+
+.cliente-cabecario {
+	display: grid;
+	grid-template-columns: 209px 260px 180px 300px 150px; /* Largura fixa para cada coluna */
+	font-weight: bold;
+	background-color: #f4f4f4;
+	padding: 10px;
+	border-bottom: 2px solid #000;
+	text-align: left;
+}
+
+.dados-cliente {
+	display: grid;
+	grid-template-columns: 200px 250px 170px 290px 150px; /* Largura fixa para cada coluna */
+	gap: 10px;
+	flex: 1;
+	text-align: left;
+}
+
+.li-cliente {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	justify-items: left;
+	border-bottom: 1px solid #ccc;
+	padding: 10px;
+}
+
+.action-buttons {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.action-buttons button {
+	padding: 5px 10px;
+	border: none;
+	background-color: #007bff;
+	color: white;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.action-buttons button:hover {
+	background-color: #0056b3;
+}
+
+#delete-cliente {
+	background-color: rgb(238, 54, 54);
+}
+
+#delete-cliente:hover {
+	background-color: rgb(192, 5, 5);
+}
+
+.ul-cliente {
+	padding: 0;
+}
+
+.dados-cliente span:nth-child(4) {
+	max-width: 250px;
+	word-wrap: break-word; /* Quebra a palavra para a próxima linha, se necessário */
+	overflow-wrap: break-word; /* Alternativa, também garante a quebra de palavras longas */
+	white-space: normal; /* Garante que o texto se ajuste ao conteúdo */
+}
+
+.form-content-delete {
+	background-color: white;
+	padding: 20px;
+	max-width: 500px; /* Tamanho máximo do formulário */
+	width: 100%;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	position: relative;
+	z-index: 1001;
+	overflow: hidden;
+}
+
+.form-content-delete form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.form-content-delete h2 {
+	text-align: center;
+}
+
+.form-content-delete p {
+	text-align: center;
+}
+
+.form-content-delete button {
+	width: 200px;
+	max-width: 300px; /* Limita a largura dos botões */
+	margin: 10px 0; /* Espaçamento entre os botões */
+	padding: 10px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.form-content-delete button:hover {
+	background-color: #0056b3;
+}
+
+.answer-buttons {
+	display: flex;
+	flex-direction: row;
+	gap: 15px;
+	align-items: center;
+	justify-content: center;
+}
+
+.no-cliente {
+	padding-left: 20px;
+}
+
+.form-content-edit {
+	background-color: white;
+	padding: 20px;
+	max-width: 500px; /* Tamanho máximo do formulário */
+	width: 100%;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	position: relative;
+	z-index: 1001;
+	overflow: hidden;
+}
+
+.form-content-edit h2 {
+	text-align: center;
+}
+
+.form-content-edit form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.form-content-edit form button {
+	width: 200px;
+	padding: 10px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.form-content-edit button:hover {
+	background-color: #0056b3;
+}
+
+.button-save-edit {
+	display: flex;
+	justify-content: center;
+}
