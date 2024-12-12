@@ -11,17 +11,17 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
           <ul>
             <li>
               <Link to='/cliente' className='link-sidebar' onClick={toggleSidebar}>
-                Adicionar Cliente
+                Cliente
               </Link>
             </li>
             <li>
               <Link to='#' className='link-sidebar' onClick={toggleSidebar}>
-                Adicionar Animal
+                Animal
               </Link>
             </li>
             <li>
               <Link to='#' className='link-sidebar' onClick={toggleSidebar}>
-                Adicionar Usuário
+                Usuário
               </Link>
             </li>
           </ul>
