@@ -1,0 +1,108 @@
+.container-animal {
+	background-color: white;
+	margin: 50px;
+	border-radius: 6px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding-bottom: 10px;
+}
+
+.container-animal h1 {
+	margin: 20px;
+	font-size: 1.3rem;
+	color: black;
+	line-height: 1.5;
+	font-weight: 300;
+}
+
+#adicionar-animal {
+	margin: 20px;
+	background-color: #4caf50;
+	color: white;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 8px;
+	border: none;
+	transition: all 0.3s ease;
+	display: inline-block;
+	padding: 20px 25px;
+}
+
+#adicionar-animal:hover {
+	background-color: #45a049;
+	transform: scale(1.05);
+	cursor: pointer;
+}
+
+#adicionar-animal:active {
+	background-color: #388e3c;
+	transform: scale(0.98);
+}
+
+.h1-animais {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.animais-list {
+	margin: 20px;
+	border: 1px solid rgba(0, 0, 0, 0.386);
+	border-radius: 5px;
+}
+
+.animais-cabecario {
+	display: grid;
+	grid-template-columns: 150px 150px 150px 150px 150px 110px 190px 150px; /* Largura fixa para cada coluna */
+	font-weight: bold;
+	background-color: #f4f4f4;
+	padding: 10px;
+	border-bottom: 2px solid #000;
+	text-align: left;
+}
+
+.dados-animal {
+	display: grid;
+	grid-template-columns: 142px 140px 140px 137px 147px 100px 190px 150px; /* Largura fixa para cada coluna */
+	gap: 10px;
+	flex: 1;
+	text-align: left;
+}
+
+.ul-animal {
+	padding: 0;
+}
+
+.li-animal {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	justify-items: left;
+	border-bottom: 1px solid #ccc;
+	padding: 10px;
+}
+
+.dados-animal span {
+	max-width: 250px;
+	word-wrap: break-word; /* Quebra a palavra para a próxima linha, se necessário */
+	overflow-wrap: break-word; /* Alternativa, também garante a quebra de palavras longas */
+	white-space: normal; /* Garante que o texto se ajuste ao conteúdo */
+}
+
+.input-style {
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.input-style:focus {
+	border-color: #007bff;
+	outline: none;
+}
+
+.form-content button {
+	margin-top: 20px;
+}

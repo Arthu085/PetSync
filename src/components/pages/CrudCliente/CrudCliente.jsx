@@ -3,6 +3,7 @@ import NavigationBar from "../../NavigationBar/NavigationBar";
 import './CrudCliente.css';
 
 const CrudCliente = () => {
+  
   const [clientes, setClientes] = useState([]);
   const [formVisible, setFormVisible] = useState(false);
   const [nome_cliente, setNomeCliente] = useState('');
@@ -201,7 +202,6 @@ const CrudCliente = () => {
           <h1 className="h1-cliente">Listagem de Clientes</h1>
           <button id="adicionar-cliente" onClick={toggleForm}>Adicionar Cliente</button>
         </div>
-
         <div className="clientes-list">
           {clientes.length > 0 ? (
             <div>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Login from './components/pages/Login/Login';
 import Dashboard from './components/pages/Dashboard/Dashboard';
 import CrudCliente from './components/pages/CrudCliente/CrudCliente';
+import CrudAnimal from './components/pages/CrudAnimal/CrudAnimal';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/cliente" element={<CrudCliente />} />
+          <Route path='/animal' element={<CrudAnimal />} />
         </Routes>
       </BodyClassManager>
     </Router>
@@ -29,6 +31,8 @@ const BodyClassManager = ({ children }) => {
       document.body.className = 'dashboard-page';
     } else if (location.pathname === '/cliente') {
       document.body.className = 'cliente-page';
+    } else if (location.pathname === '/animal') {
+      document.body.className = 'animal-page'
     }
   }, [location]);
 
