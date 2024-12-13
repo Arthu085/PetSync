@@ -88,3 +88,21 @@
 	overflow-wrap: break-word; /* Alternativa, também garante a quebra de palavras longas */
 	white-space: normal; /* Garante que o texto se ajuste ao conteúdo */
 }
+
+.input-style {
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.input-style:focus {
+	border-color: #007bff;
+	outline: none;
+}
+
+.form-content button {
+	margin-top: 20px;
+}

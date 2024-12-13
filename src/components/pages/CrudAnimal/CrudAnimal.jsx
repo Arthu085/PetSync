@@ -13,8 +13,13 @@ const CrudAnimal = () => {
     const [peso, setPeso] = useState('');
     const [sexo, setSexo] = useState('');
     const [observacoes, setObservacoes] = useState('');
-    const [nome_cliente, setAnimalCliente] = useState('')
+    const [nome_cliente, setAnimalCliente] = useState([])
     const [animais, setAnimais] = useState([])
+    const [clienteSelecionado, setClienteSelecionado] = useState('');
+
+    const handleSexoChange = (event) => {
+      setSexo(event.target.value);
+    }
 
     const toggleForm = () => {
         setFormVisible(!formVisible)
@@ -26,6 +31,7 @@ const CrudAnimal = () => {
             setPeso('');
             setSexo('');
             setObservacoes('');
+            setClienteSelecionado('');
         }
     }
 
@@ -35,19 +41,29 @@ const CrudAnimal = () => {
         const data = await response.json();
         if (response.ok) {
           setAnimais(data.data);
+          // Extraindo clientes únicos
+          const clientesUnicos = data.data.reduce((acc, curr) => {
+            if (!acc.some((cliente) => cliente.id_cliente === curr.id_cliente)) {
+              acc.push({ id_cliente: curr.id_cliente, nome_cliente: curr.nome_cliente });
+            }
+            return acc;
+          }, []);
+          setAnimalCliente(clientesUnicos); // Alterei para manter os clientes únicos corretamente
         } else {
           alert(`Erro ao buscar animais: ${data.message}`);
         }
-      } catch (erro) {
+      } catch (error) {
         console.error('Erro ao buscar animais:', error);
         alert('Erro ao buscar animais');
       }
-    }
+    };
 
     useEffect(() => {
       fetchAnimais();
     }, []);
 
+
+    
   return (
     <div>
         <NavigationBar />
@@ -102,7 +118,35 @@ const CrudAnimal = () => {
             <div className="form-content">
               <h2>Adicionar Novo Animal</h2>
               <form>
-                <button type="submit">Adicionar</button>
+              <input type="text" placeholder='Nome do Animal' value={nome_animal} required/>
+              <input type="text" placeholder='Espécie' value={especie} required/>
+              <input type="text" placeholder='Raça' value={raca} required/>
+              <input type="number" placeholder='Idade' value={idade} required/>
+              <input type="number" placeholder='Peso' value={peso} required/>
+              <select className="input-style" value={sexo} onChange={handleSexoChange} required>
+                <option value="" disabled>
+                  Selecione o Sexo
+                </option>
+                <option value="M">Macho</option>
+                <option value="F">Fêmea</option>
+              </select>
+              <input type="text" placeholder='Observações' value={observacoes} required/>
+              <select
+                    className='input-style'
+                    value={clienteSelecionado}
+                    onChange={(e) => setClienteSelecionado(e.target.value)}
+                    required
+                  >
+                    <option value="" disabled>
+                      Selecione o cliente
+                    </option>
+                    {nome_cliente.map((cliente) => (
+                      <option key={cliente.id_cliente} value={cliente.id_cliente}>
+                        {cliente.nome_cliente}
+                      </option>
+                    ))}
+                  </select>
+              <button type="submit">Adicionar</button>
               </form>
             </div>
           </div>
