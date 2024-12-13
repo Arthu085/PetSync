@@ -18,6 +18,18 @@ const CrudAnimal = () => {
     const [clienteSelecionado, setClienteSelecionado] = useState('');
     const [formVisibleDelete, setFormVisibleDelete] = useState(false);
     const [animalExcluirId, setAnimalExcluirId] = useState(null);
+    const [formVisibleEdit, setFormVisibleEdit] = useState(false);
+    const [animalId, setAnimalId] = useState(null);
+    const [editableFields, setEditableFields] = useState({
+        nome_animal: false,
+        especie: false,
+        raca: false,
+        idade: false,
+        peso: false,
+        sexo: false,
+        observacoes: false,
+        nome_cliente: false,
+      });
 
     const handleSexoChange = (event) => {
       setSexo(event.target.value);
@@ -120,6 +132,86 @@ const CrudAnimal = () => {
 
   const handleCancelDelete = () => setFormVisibleDelete(false);
     
+  const toggleFormEdit = () => {
+    setFormVisibleEdit(!formVisibleEdit)
+  }
+
+  const handleEditClick = (id_animal) => {
+    setAnimalId(id_animal);
+    const animal = animais.find(c => c.id_animal === id_animal);
+    setNomeAnimal(animal.nome_animal);
+    setEspecie(animal.especie);
+    setRaca(animal.raca);
+    setIdade(animal.idade);
+    setPeso(animal.peso);
+    setSexo(animal.sexo);
+    setObservacoes(animal.observacoes);
+    setClienteSelecionado(animal.clienteSelecionado)
+    setEditableFields({
+      nome_animal: false,
+      especie: false,
+      raca: false,
+      idade: false,
+      peso: false,
+      sexo: false,
+      observacoes: false,
+      nome_cliente: false,
+    });
+    setFormVisibleEdit(true);    
+  }
+
+  const handleFieldChange = (field) => {
+    setEditableFields((prevState) => ({
+      ...prevState,
+      [field]: !prevState[field]
+    }));
+  };
+  
+  const handleEditSubmit = async (e) => {
+    e.preventDefault();
+  
+    const animalData = {};
+    if (editableFields.nome_animal && nome_animal) animalData.nome_animal = nome_animal;
+    if (editableFields.raca && raca) animalData.raca = raca;
+    if (editableFields.especie && especie) animalData.especie = especie;
+    if (editableFields.idade && idade) animalData.idade = idade;
+    if (editableFields.peso && peso) animalData.peso = peso;
+    if (editableFields.sexo && sexo) animalData.sexo = sexo;
+    if (editableFields.observacoes && observacoes) animalData.observacoes = observacoes;
+    if (editableFields.nome_cliente && clienteSelecionado) animalData.id_cliente = clienteSelecionado;
+  
+    // Verifique se há dados para enviar antes de tentar editar
+    if (Object.keys(animalData).length === 0) {
+      alert('Nenhum campo foi modificado.');
+      return;
+    }
+  
+    // Verifique se o clienteId está presente
+    if (!animalId) {
+      alert('ID do animal não encontrado.');
+      return;
+    }
+  
+    try {
+      const response = await fetch(`http://localhost:5000/api/animais/${animalId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(animalData),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        alert('Animal atualizado com sucesso!');
+        fetchAnimais(); // Atualiza a lista de clientes
+      } else {
+        alert(`Erro ao atualizar animal: ${data.message}`);
+      }
+    } catch (error) {
+      console.error('Erro ao atualizar animal:', error);
+      alert('Erro ao atualizar animal');
+    }
+    setFormVisibleEdit(false);
+  };  
+
   return (
     <div>
         <NavigationBar />
@@ -155,7 +247,7 @@ const CrudAnimal = () => {
                       <span>{animais.nome_cliente}</span>
                     </div>
                     <div className="action-buttons">
-                      <button id="edit-cliente" onClick={() => handleEditClick(cliente.id_cliente)}>Editar</button>
+                      <button id="edit-cliente" onClick={() => handleEditClick(animais.id_animal)}>Editar</button>
                       <button id="delete-cliente" onClick={() => handleDeleteClick(animais.id_animal)}>Excluir</button>
                     </div>
                   </li>
@@ -218,6 +310,97 @@ const CrudAnimal = () => {
               <button onClick={handleConfirmDelete}>Confirmar</button>
               <button onClick={handleCancelDelete}>Cancelar</button>
             </div>
+          </div>
+        </div>          
+        )}
+
+        {formVisibleEdit && (
+          <div className="form-container">
+          <div className="form-overlay" onClick={toggleFormEdit}></div>
+          <div className="form-content-edit">
+            <h2>Editar Cliente</h2>
+            <form onSubmit={handleEditSubmit}>
+              <div>
+                <input type="checkbox" checked={editableFields.nome_animal} onChange={() => handleFieldChange('nome_animal')} />
+                <label>Editar Nome Animal</label>
+              </div>
+              {editableFields.nome_animal && <input type="text" placeholder="Nome do Animal" value={nome_animal} onChange={(e) => setNomeAnimal(e.target.value)} />}
+              
+              <div>
+                <input type="checkbox" checked={editableFields.especie} onChange={() => handleFieldChange('especie')} />
+                <label>Editar Espécie</label>
+              </div>
+              {editableFields.especie && <input type="text" placeholder="Espécie" value={especie} onChange={(e) => setEspecie(e.target.value)} />}
+              
+              <div>
+                <input type="checkbox" checked={editableFields.raca} onChange={() => handleFieldChange('raca')} />
+                <label>Editar Raça</label>
+              </div>
+              {editableFields.raca && <input type="text" placeholder="Raça" value={raca} onChange={(e) => setRaca(e.target.value)} />}
+              
+              <div>
+                <input type="checkbox" checked={editableFields.idade} onChange={() => handleFieldChange('idade')} />
+                <label>Editar Idade</label>
+              </div>
+              {editableFields.idade && <input type='number' placeholder="Idade" value={idade} onChange={(e) => setIdade(e.target.value)} />}
+              
+              <div>
+                <input type="checkbox" checked={editableFields.peso} onChange={() => handleFieldChange('peso')} />
+                <label>Editar Peso</label>
+              </div>
+              {editableFields.peso && <input type="number" placeholder="Peso" value={peso} onChange={(e) => setPeso(e.target.value)} />}
+
+              <div>
+                <input type="checkbox" checked={editableFields.sexo} onChange={() => handleFieldChange('sexo')} />
+                <label>Editar Sexo</label>
+              </div>
+              {editableFields.sexo && (
+                                          <select
+                                          className="input-style"
+                                          value={sexo}
+                                          onChange={handleSexoChange}
+                                          required
+                                        >
+                                          <option value="" disabled>
+                                            Selecione o Sexo
+                                          </option>
+                                          <option value="M">Macho</option>
+                                          <option value="F">Fêmea</option>
+                                        </select>
+                                      )}                
+
+              <div>
+                <input type="checkbox" checked={editableFields.observacoes} onChange={() => handleFieldChange('observacoes')} />
+                <label>Editar Observação</label>
+              </div>
+              {editableFields.observacoes && <input type="text" placeholder="Observações" value={observacoes} onChange={(e) => setObservacoes(e.target.value)} />}
+
+              <div>
+                <input type="checkbox" checked={editableFields.nome_cliente} onChange={() => handleFieldChange('nome_cliente')} />
+                <label>Editar Cliente</label>
+              </div>
+              {editableFields.nome_cliente && (
+                                      <select
+                                      className="input-style"
+                                      value={clienteSelecionado}
+                                      onChange={(e) => setClienteSelecionado(e.target.value)}
+                                      required
+                                    >
+                                      <option value="" disabled>
+                                        Selecione o cliente
+                                      </option>
+                                      {nome_cliente.map((cliente) => (
+                                        <option key={cliente.id_cliente} value={cliente.id_cliente}>
+                                          {cliente.nome_cliente}
+                                        </option>
+                                      ))}
+                                    </select>
+                                  )}
+
+              <div className="button-save-edit">
+                <button type="submit">Salvar</button>
+                </div>
+            </form>
           </div>
         </div>          
         )}
