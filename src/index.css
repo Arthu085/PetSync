@@ -27,3 +27,9 @@ body.animal-page {
 	background-color: #9dbad7;
 	font-family: "DM Sans", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+body.usuario-page {
+	margin: 0;
+	background-color: #9dbad7;
+	font-family: "DM Sans", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
