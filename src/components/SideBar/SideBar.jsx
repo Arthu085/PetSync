@@ -20,7 +20,7 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
               </Link>
             </li>
             <li>
-              <Link to='#' className='link-sidebar' onClick={toggleSidebar}>
+              <Link to='/usuario' className='link-sidebar' onClick={toggleSidebar}>
                 Usuário
               </Link>
             </li>

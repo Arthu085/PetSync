@@ -4,6 +4,7 @@ import Login from './components/pages/Login/Login';
 import Dashboard from './components/pages/Dashboard/Dashboard';
 import CrudCliente from './components/pages/CrudCliente/CrudCliente';
 import CrudAnimal from './components/pages/CrudAnimal/CrudAnimal';
+import CrudUsuario from './components/pages/CrudUsuario/CrudUsuario';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/cliente" element={<CrudCliente />} />
           <Route path='/animal' element={<CrudAnimal />} />
+          <Route path='/usuario' element={<CrudUsuario />} />
         </Routes>
       </BodyClassManager>
     </Router>
@@ -33,6 +35,8 @@ const BodyClassManager = ({ children }) => {
       document.body.className = 'cliente-page';
     } else if (location.pathname === '/animal') {
       document.body.className = 'animal-page'
+    } else if (location.pathname === 'usuario') {
+      document.body.className = 'usuario-page'
     }
   }, [location]);
 
