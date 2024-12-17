@@ -146,7 +146,7 @@ const CrudAnimal = () => {
     setPeso(animal.peso);
     setSexo(animal.sexo);
     setObservacoes(animal.observacoes);
-    setClienteSelecionado(animal.clienteSelecionado)
+    setClienteSelecionado(animal.id_cliente)
     setEditableFields({
       nome_animal: false,
       especie: false,
