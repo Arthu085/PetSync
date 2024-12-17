@@ -6,7 +6,6 @@ const Dashboard = () => {
   return (
     <div>
         <NavigationBar/>
-        <h1 className='bem-vindo'>Bem-Vindo <br/>ao <br/>PetSync!</h1>
     </div>
   )
 }

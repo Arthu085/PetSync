@@ -18,6 +18,7 @@ const NavigationBar = () => {
         <Link className="link-dashboard" to="/dashboard">
           Dashboard
         </Link>
+        <h1 className='tittle'>PetSync</h1>
         <div className='buttons'>
           <button
             className="hamburguer-button"
