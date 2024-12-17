@@ -4,6 +4,7 @@ import hamburguer from '../../assets/hamburguer.svg';
 import './NavigationBar.css';
 import SideBar from '../SideBar/SideBar';
 import logout from '../../assets/logout-svgrepo-com.svg'
+import patas from '../../assets/1314467.svg'
 
 const NavigationBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,7 +19,7 @@ const NavigationBar = () => {
         <Link className="link-dashboard" to="/dashboard">
           Dashboard
         </Link>
-        <h1 className='tittle'>PetSync</h1>
+        <h1 className='tittle'>PetSync <img className='img-patas' src={patas} alt="Patas de gato" /></h1>
         <div className='buttons'>
           <button
             className="hamburguer-button"
