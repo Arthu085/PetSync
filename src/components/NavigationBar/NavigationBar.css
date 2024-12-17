@@ -1,53 +1,89 @@
 .navbar {
-    background-color: rgb(70, 144, 184);
-    padding: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+	background-color: rgb(70, 144, 184);
+	padding: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .link-dashboard {
-    text-decoration: none;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 1.5em;
+	text-decoration: none;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 600;
+	font-size: 1.5em;
 }
 
 .link-dashboard:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .hamburguer-button {
-    all: unset; /* Remove todos os estilos padrão */
-    display: flex; /* Para alinhar o conteúdo do botão */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 10px 10px; /* Espaçamento interno */
-    transition: background-color 0.3s, transform 0.2s; /* Suaviza animações */
-  }
-  
-  .hamburguer-button:hover {
-    background-color: #28609f3e; /* Cor mais escura ao passar o mouse */
-    transform: scale(1.05); /* Leve ampliação */
-    cursor: pointer; /* Mostra que o elemento é clicável */
-  }
-  
-  .hamburguer-button:active {
-    background-color: #d1d5db; /* Cor de fundo ao clicar */
-    transform: scale(0.95); /* Simula um clique */
-  }
-  
-  .hamburguer-button img {
-    width: 70px; /* Tamanho ajustado da imagem */
-    height: 35px; /* Proporcional à largura */
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Sombra sutil */
-  }
-  
-  .hamburguer-button:hover img {
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3)); /* Sombra mais forte no hover */
-  }
-  
+	all: unset; /* Remove todos os estilos padrão */
+	display: flex; /* Para alinhar o conteúdo do botão */
+	justify-content: center; /* Centraliza horizontalmente */
+	align-items: center; /* Centraliza verticalmente */
+	border-radius: 8px; /* Bordas arredondadas */
+	padding: 10px 10px; /* Espaçamento interno */
+	transition: background-color 0.3s, transform 0.2s; /* Suaviza animações */
+}
+
+.hamburguer-button:hover {
+	background-color: #28609f3e; /* Cor mais escura ao passar o mouse */
+	transform: scale(1.05); /* Leve ampliação */
+	cursor: pointer; /* Mostra que o elemento é clicável */
+}
+
+.hamburguer-button:active {
+	background-color: #d1d5db; /* Cor de fundo ao clicar */
+	transform: scale(0.95); /* Simula um clique */
+}
+
+.hamburguer-button img {
+	width: 70px; /* Tamanho ajustado da imagem */
+	height: 35px; /* Proporcional à largura */
+	filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.hamburguer-button:hover img {
+	filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.logout-button {
+	all: unset;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 8px;
+	padding: 10px 10px;
+	transition: background-color 0.3s, transform 0.2s;
+}
+
+.logout-button:hover {
+	background-color: #28609f3e;
+	transform: scale(1.05);
+	cursor: pointer;
+}
+
+.logout-button:active {
+	background-color: #d1d5db;
+	transform: scale(0.95);
+}
+
+.logout-button img {
+	height: 35px;
+	filter: invert(1) brightness(2) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Aplica todos os filtros */
+}
+
+.logout-button:hover img {
+	filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+	filter: invert(1);
+}
+
+.buttons {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
