@@ -92,3 +92,10 @@
 	font-weight: 600;
 	font-size: 1.5em;
 }
+
+.img-patas {
+	width: 30px; /* Tamanho ajustado da imagem */
+	height: 22px; /* Proporcional à largura */
+	filter: invert(1); /* Aplica todos os filtros */
+	margin-left: 10px;
+}
