@@ -27,6 +27,11 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
           <li><Link to="/usuario" className='link-sidebar' onClick={toggleSidebar}>Usuários</Link></li> 
             )}
             </li>
+            <li>
+              <Link to='/agendamento' className='link-sidebar' onClick={toggleSidebar}>
+                Agendamento
+              </Link>
+            </li>            
           </ul>
         </nav>
       </div>

@@ -1,0 +1,63 @@
+.container-form-agendamento {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	width: fit-content;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	background-color: white;
+	padding: 20px;
+	border-radius: 6px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container-adicionar-agendamento {
+	display: flex;
+	justify-content: center;
+}
+
+.container-adicionar-agendamento form select {
+	margin-bottom: 20px;
+}
+
+.container-adicionar-agendamento form input {
+	margin-bottom: 20px;
+}
+
+.container-adicionar-agendamento form label {
+	text-align: justify;
+}
+
+.container-adicionar-agendamento h2 {
+	margin: 0;
+	margin-bottom: 10px;
+}
+
+.label-input {
+	display: flex;
+	flex-direction: column;
+}
+
+#adicionar-agendamento {
+	padding: 13px 25px;
+	background-color: #4caf50;
+	color: white;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 8px;
+	border: none;
+	transition: all 0.3s ease;
+	display: inline-block;
+}
+
+#adicionar-agendamento:hover {
+	background-color: #45a049;
+	transform: scale(1.05);
+	cursor: pointer;
+}
+
+#adicionar-agendamento:active {
+	background-color: #388e3c;
+	transform: scale(0.98);
+}
