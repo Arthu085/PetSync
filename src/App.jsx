@@ -6,6 +6,7 @@ import CrudCliente from './components/pages/CrudCliente/CrudCliente';
 import CrudAnimal from './components/pages/CrudAnimal/CrudAnimal';
 import CrudUsuario from './components/pages/CrudUsuario/CrudUsuario';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import CrudAgendamento from './components/pages/CrudAgendamento/CrudAgendamento';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
               <CrudUsuario />
             </ProtectedRoute>
           }/>
+          <Route path='/agendamento' element={<CrudAgendamento/>}/>
         </Routes>
       </BodyClassManager>
     </Router>
@@ -42,6 +44,8 @@ const BodyClassManager = ({ children }) => {
       document.body.className = 'animal-page'
     } else if (location.pathname === '/usuario') {
       document.body.className = 'usuario-page'
+    } else if (location.pathname === '/agendamento') {
+      document.body.BodyClassManager = 'agendamento-page'
     }
   }, [location]);
 
