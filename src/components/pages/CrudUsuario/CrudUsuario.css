@@ -40,7 +40,7 @@
 
 .dados-usuario {
 	display: grid;
-	grid-template-columns: 1.6fr 1.34fr 1.5fr; /* Largura fixa para cada coluna */
+	grid-template-columns: 1.6fr 1.24fr 1.5fr; /* Largura fixa para cada coluna */
 	gap: 10px;
 	flex: 1;
 	text-align: left;
