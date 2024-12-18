@@ -2,6 +2,7 @@ import './CrudUsuario.css'
 import '../CrudAnimal/CrudAnimal.css'
 import NavigationBar from '../../NavigationBar/NavigationBar'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const CrudUsuario = () => {
 
@@ -19,6 +20,17 @@ const CrudUsuario = () => {
         senha: false,
         idAcesso: false,
     });
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      const accessType = Number(localStorage.getItem('accessType'));
+    
+      if (accessType !== 1) {
+        console.log('Acesso negado, redirecionando...');
+        navigate('/');
+      }
+    }, [navigate]);
     
     const toggleForm = () => {
         setFormVisible(!formVisible)

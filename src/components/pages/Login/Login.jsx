@@ -23,7 +23,9 @@ const Login = () => {
       const data = await response.json();
   
       if (data.success) {
-        navigate('/dashboard'); // Redirecionar para o dashboard
+        navigate('/dashboard');
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('accessType', Number(data.accessType));
       } else {
         setMessage(data.message);
       }

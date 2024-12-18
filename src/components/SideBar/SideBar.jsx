@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import './SideBar.css';
 
 const SideBar = ({ isOpen, toggleSidebar }) => {
+
+  const accessType = Number(localStorage.getItem('accessType')); 
+
   return (
     <>
       {/* Overlay para fechar ao clicar fora */}
@@ -20,9 +23,9 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
               </Link>
             </li>
             <li>
-              <Link to='/usuario' className='link-sidebar' onClick={toggleSidebar}>
-                Usuário
-              </Link>
+            {accessType === 1 && (
+          <li><Link to="/usuario" className='link-sidebar' onClick={toggleSidebar}>Usuários</Link></li> 
+            )}
             </li>
           </ul>
         </nav>
