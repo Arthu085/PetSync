@@ -153,11 +153,11 @@ const CrudAgendamento = () => {
                             ))}
                           </select>
                     <div className='label-input'>
-                        <label for="data">Data do Agendamento:</label><br />
+                        <label htmlFor="data">Data do Agendamento:</label><br />
                         <input className='input-style' type="date" id='date' value={dataInput} onChange={handleSelectData} required/><br />
                     </div>
                     <div className='label-input'>
-                        <label for="hora">Hora do Agendamento:</label><br />
+                        <label htmlFor="hora">Hora do Agendamento:</label><br />
                         <input  className='input-style' type="time" id='hora' value={horaInput} onChange={handleSelectHora} required/>
                     </div>
                     <select className='input-style' value={status} onChange={handleSelectStatus} required>

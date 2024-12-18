@@ -22,11 +22,13 @@ const SideBar = ({ isOpen, toggleSidebar }) => {
                 Animal
               </Link>
             </li>
-            <li>
             {accessType === 1 && (
-          <li><Link to="/usuario" className='link-sidebar' onClick={toggleSidebar}>Usuários</Link></li> 
+              <li>
+                <Link to="/usuario" className='link-sidebar' onClick={toggleSidebar}>
+                  Usuários
+                </Link>
+              </li>
             )}
-            </li>
             <li>
               <Link to='/agendamento' className='link-sidebar' onClick={toggleSidebar}>
                 Agendamento

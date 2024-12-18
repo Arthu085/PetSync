@@ -22,7 +22,7 @@ const App = () => {
               <CrudUsuario />
             </ProtectedRoute>
           }/>
-          <Route path='/agendamento' element={<CrudAgendamento/>}/>
+          <Route path='/agendamento' element={<CrudAgendamento />} />
         </Routes>
       </BodyClassManager>
     </Router>
@@ -45,7 +45,7 @@ const BodyClassManager = ({ children }) => {
     } else if (location.pathname === '/usuario') {
       document.body.className = 'usuario-page'
     } else if (location.pathname === '/agendamento') {
-      document.body.BodyClassManager = 'agendamento-page'
+      document.body.className = 'agendamento-page'
     }
   }, [location]);
 
