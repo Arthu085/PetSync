@@ -191,7 +191,7 @@ const Dashboard = () => {
           <div className='agendamentos'>
             <h2>Agendamentos Adicionados</h2>
             <h3>Filtrar Agendamentos</h3>
-          <select value={filtroStatus} onChange={handleFilterStatus}>
+          <select className='input-style' value={filtroStatus} onChange={handleFilterStatus}>
             <option value="geral">Todos</option>
             <option value="1">Agendado</option>
             <option value="3">Cancelado</option>
@@ -209,8 +209,7 @@ const Dashboard = () => {
                   <p><strong>Status:</strong> {agendamento.descricao_status}</p>
                   <p><strong>Data e Hora:</strong> {formatarDataHora(agendamento.data_hora)}</p>
                   <p><strong>Observações:</strong> {agendamento.observacoes}</p>
-                  <button onClick={() => handleEditStatus(agendamento.id_agendamento)}>Alterar Status</button>
-                  <hr />
+                  <button id='editar-status' onClick={() => handleEditStatus(agendamento.id_agendamento)}>Alterar Status</button>
                 </li>
               ))}
             </ul>
