@@ -1,6 +1,6 @@
 .container-informacoes {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
 }
 
 .informacoes-gerais {
