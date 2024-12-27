@@ -19,14 +19,12 @@ O sistema possui as seguintes telas:
 - **Backend**: Node.js (em outro repositório privado)
 - **Banco de Dados**: PostgreSQL (hospedado na Supabase)
 
-## Como Rodar Apenas o Frontend (o sistema nã irá funcionar corretamente devido a falta do backend)
+## Como Rodar o Projeto
 
 ### Pré-requisitos
 
 - Node.js (versão 14 ou superior)
 - npm
-
-### Passos para Rodar o Projeto Localmente
 
 ## Rodar o Backend
 
