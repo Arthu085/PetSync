@@ -11,6 +11,7 @@ O sistema possui as seguintes telas:
 3. **CRUD de Clientes**: Permite a adição, edição, visualização e exclusão de informações sobre os clientes do petshop.
 4. **CRUD de Animais**: Permite a gestão de animais cadastrados, incluindo dados como espécie, nome, dono, entre outros, contendo adição, edição, visualização e exclusão.
 5. **CRUD de Usuários**: Facilita a administração dos usuários que têm acesso ao sistema, permitindo adicionar, editar ou excluir usuários, determinando seu nível de acesso de admnistrador ou funcionário.
+6. **Tela de Agendamentos**: Tela para adicionar agendamentos, selecionando o tipo de serviço, data, hora, animal, cliente, status e alguma observação se necessária.
 
 ## Tecnologias Utilizadas
 
@@ -26,6 +27,31 @@ O sistema possui as seguintes telas:
 - npm
 
 ### Passos para Rodar o Projeto Localmente
+
+## Rodar o Backend
+
+1. **Clone o repositório do backend**:
+
+   ```bash
+   git clone https://github.com/Arthu085/petsync-backend
+   cd petsync-backend
+
+   ```
+
+2. **Instale as dependências**:
+
+   ```bash
+   npm install
+
+   ```
+
+3. **Inicie o servidor de desenvolvimento**:
+
+   ```bash
+   node index.js
+   ```
+
+## Rodar Frontend
 
 1. **Clone o repositório do frontend**:
 
