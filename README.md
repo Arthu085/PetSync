@@ -26,7 +26,7 @@ O sistema possui as seguintes telas:
 - Node.js (versão 14 ou superior)
 - npm
 
-## Rodar o Backend
+### Rodar o Backend
 
 1. **Clone o repositório do backend**:
 
@@ -49,7 +49,7 @@ O sistema possui as seguintes telas:
    node index.js
    ```
 
-## Rodar Frontend
+### Rodar Frontend
 
 1. **Clone o repositório do frontend**:
 
