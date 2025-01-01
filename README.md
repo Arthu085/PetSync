@@ -75,3 +75,10 @@ O sistema possui as seguintes telas:
 ### Configuração do Banco de Dados
 
 O banco de dados já está configurado corretamente na Supabase, e você pode começar a usar o sistema sem a necessidade de ajustes adicionais.
+
+### Usuário e senha
+
+Utilize o seguinte e-mail e senha para logar:
+
+E-mail: admin@gmail.com
+Senha: admin123
