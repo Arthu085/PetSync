@@ -25,3 +25,4 @@ dist-ssr
 db_password.txt
 /backend
 petsync-backend/
+package-lock.json
